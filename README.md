@@ -4,25 +4,10 @@ This project is a wrapper for Laravel/Lumen for the [Api Football](https://www.a
 
 ## 1. Installation
 
-Require the package via `composer` in your `composer.json`.
-```json
-{
-  "require": {
-    "fpicosm/api-sports-football": "^1.0"
-  }
-}
-```
-  
-Run `composer` to install or update the new requirement.
+Require the package via `composer`:
 
 ```bash
-$ composer install
-```
-
-or
-
-```bash
-$ composer update
+composer require fpicosm/api-sports-football 
 ```
 
 ## 2. Configuration
@@ -83,9 +68,9 @@ if (!function_exists('config_path')) {
 <?php
 
 return [
-    'base_url' => env('FOOTBALL_API_BASE_URL'),
     'api_key' => env('FOOTBALL_API_KEY'),
-    'timezone' => env('APP_TIMEZONE')
+    'api_origin' => env('FOOTBALL_API_ORIGIN'),
+    'api_timezone' => env('FOOTBALL_API_TIMEZONE') ?: env('APP_TIMEZONE'),
 ];
 ```
 
