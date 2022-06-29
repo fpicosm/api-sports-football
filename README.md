@@ -182,15 +182,6 @@ You can call to `FootballApi::class()->method()`. The available classes and meth
   - `FootballApi::fixtures(592799)->statistics(['team' => 39])`
   - `FootballApi::fixtures(592799)->statistics(['type' => 'Shots on goal'])`
 
-
-In this way, you can instantiate the fixture and combine different calls. For example:
-
-```php
-$fixture = FootballApi::fixtures(592799);
-$fixture->lineups(); // is the same as FootballApi::fixtures(592799)->lineups();
-$fixture->events(); // is the same as FootballApi::fixtures(592799)->events();
-```
-
 ### Leagues
 
 - **`get`** returns the list of available competitions. Examples: 
@@ -343,3 +334,12 @@ $fixture->events(); // is the same as FootballApi::fixtures(592799)->events();
 
 - **`find`** returns the venue information. Examples: 
   - `FootballApi::venues()->find(489)`
+
+
+In this way, you can instantiate an item and combine different calls. For example:
+
+```php
+$fixture = FootballApi::fixtures(592799);
+$fixture->lineups(); // is the same as FootballApi::fixtures(592799)->lineups();
+$fixture->events(); // is the same as FootballApi::fixtures(592799)->events();
+```
