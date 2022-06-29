@@ -114,21 +114,21 @@ class Team extends FootballApiClient
     }
 
     /**
-     * Get the standings for a team given the season.
+     * Get the standings for a team given the year.
      *
      * @link    https://api-sports.io/documentation/football/v3#tag/Standings/operation/get-standings
-     * @param   int     $season the season year
+     * @param   int     $year   the year
      * @param   array   $query  the query params
      * @return  object  the response data
      * @throws  GuzzleException
      */
-    public function standings(int $season, array $query = []): object
+    public function standings(int $year, array $query = []): object
     {
         if (empty($this->id)) throw new InvalidArgumentException('No team ID set');
 
         return $this->call('standings', [
             'team' => $this->id,
-            'season' => $season,
+            'season' => $year,
             ...$query,
         ]);
     }

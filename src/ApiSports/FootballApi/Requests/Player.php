@@ -124,17 +124,13 @@ class Player extends FootballApiClient
      * Get all available trophies for a player.
      *
      * @link    https://api-sports.io/documentation/football/v3#tag/Trophies/operation/get-trophies
-     * @param   array   $query  the query params
      * @return  object  the response data
      * @throws  Exception|GuzzleException
      */
-    public function trophies(array $query = []): object
+    public function trophies(): object
     {
         if (empty($this->id)) throw new InvalidArgumentException('No player ID set');
 
-        return $this->call('trophies', [
-            'player' => $this->id,
-            ...$query,
-        ]);
+        return $this->call('trophies', [ 'player' => $this->id ]);
     }
 }

@@ -50,6 +50,19 @@ class Fixture extends FootballApiClient
     }
 
     /**
+     * Get the fixture's information.
+     *
+     * @link    https://api-sports.io/documentation/football/v3#tag/Fixtures/operation/get-fixtures
+     * @param   array       $ids    the fixtures ids
+     * @return  array|null  the response data
+     * @throws  Exception|GuzzleException
+     */
+    public function findList(array $ids): ?array
+    {
+        return $this->call('fixtures', ['ids' => implode('-', $ids)], true)->response;
+    }
+
+    /**
      * Get the events from a fixture.
      *
      * @link    https://api-sports.io/documentation/football/v3#tag/Fixtures/operation/get-fixtures-events
@@ -104,7 +117,7 @@ class Fixture extends FootballApiClient
     }
 
     /**
-     * Get the player's statistics from one fixture.
+     * Get the player's statistics from a fixture.
      *
      * @link    https://api-sports.io/documentation/football/v3#tag/Fixtures/operation/get-fixtures-players
      * @param   array   $query  the query params
