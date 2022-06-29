@@ -167,6 +167,26 @@ class League extends FootballApiClient
     }
 
     /**
+     * Get the teams for a season.
+     *
+     * @link    https://api-sports.io/documentation/football/v3#tag/Fixtures/operation/get-fixtures
+     * @param   array   $query    the query params
+     * @return  object  the response data
+     * @throws  GuzzleException
+     */
+    public function teams(array $query = []): object
+    {
+        if (empty($this->id)) throw new InvalidArgumentException('No league ID set');
+        if (empty($this->season)) throw new InvalidArgumentException('No season year set');
+
+        return $this->call('teams', [
+            'league' => $this->id,
+            'season' => $this->season,
+            ...$query,
+        ]);
+    }
+
+    /**
      * Get the best players in terms of assists for a season.
      *
      * @link    https://api-sports.io/documentation/football/v3#tag/Players/operation/get-players-topassists

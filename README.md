@@ -213,6 +213,11 @@ The available classes and methods are:
   - `FootballApi::leagues(39, 2020)->standings(['team' => 39])`
 
 
+- **`teams`** returns the teams for a season. Examples:
+  - `FootballApi::leagues(39, 2020)->teams()`
+  - `FootballApi::leagues(39, 2020)->teams(['code' => 'MUN'])`
+
+
 - **`topAssists`** returns the best players in terms of assists for a season. Examples: 
   - `FootballApi::leagues(39, 2020)->topAssists()`
 

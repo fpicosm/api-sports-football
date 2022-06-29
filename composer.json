@@ -1,7 +1,7 @@
 {
     "name": "fpicosm/api-sports-football",
     "description": "A Laravel/Lumen wrapper for https://www.api-football.com/ calls",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "keywords": ["football", "api", "sports"],
     "license": "MIT",
     "authors": [
