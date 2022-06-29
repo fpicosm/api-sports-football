@@ -112,32 +112,34 @@ class_alias(\ApiSports\FootballApi\Facades\FootballApi::class, 'FootballApi');
 
 ## 3. Usage
 
-You can call to `FootballApi::class()->method()`. The available classes and methods are:
+You can call to `FootballApi::class()->method()` 
 
-### Coaches
+### Classes
+
+The available classes and methods are:
+
+#### Coaches
 
 - **`get`** returns the information about the coaches and their careers. Examples:
-  - `FootballApi::coaches()->get(['id' => 4])`
-  - `FootballApi::coaches()->get(['search' => 'Guardiola'])`
+  - `FootballApi::coaches()->get(['id' => 1])`
+  - `FootballApi::coaches()->get(['search' => 'Klopp'])`
 
 
 - **`find`** returns the information about the coach and him/her career. Examples:
   - `FootballApi::coaches()->find(1)`
-  - `FootballApi::coaches()->find(4)`
 
 
 - **`trophies`** returns the trophies for a coach. Examples:
   - `FootballApi::coaches(1)->trophies()`
-  - `FootballApi::coaches(4)->trophies()`
 
-### Countries
+#### Countries
 
 - **`get`** returns the list of available countries for the "leagues" endpoint. Examples: 
   - `FootballApi::countries()->get()`
   - `FootballApi::countries()->get(['name' => 'England'])`
   - `FootballApi::countries()->get(['code' => 'GB'])`
 
-### Fixtures
+#### Fixtures
 
 - **`get`** returns the list of fixtures. Examples:
   - `FootballApi::fixtures()->get(['live' => 'all'])`
@@ -182,7 +184,7 @@ You can call to `FootballApi::class()->method()`. The available classes and meth
   - `FootballApi::fixtures(592799)->statistics(['team' => 39])`
   - `FootballApi::fixtures(592799)->statistics(['type' => 'Shots on goal'])`
 
-### Leagues
+#### Leagues
 
 - **`get`** returns the list of available competitions. Examples: 
   - `FootballApi::leagues()->get()`
@@ -192,7 +194,6 @@ You can call to `FootballApi::class()->method()`. The available classes and meth
 
 - **`find`** returns the competition details. Examples: 
   - `FootballApi::leagues()->find(39)`
-  - `FootballApi::leagues()->find(4)`
 
 
 - **`seasons`** returns the list of available seasons. Examples: 
@@ -201,20 +202,20 @@ You can call to `FootballApi::class()->method()`. The available classes and meth
 
 - **`fixtures`** returns the fixtures for a season. Examples: 
   - `FootballApi::leagues(39, 2020)->fixtures()`
-  - `FootballApi::leagues(39, 2020)->fixtures(['team' => 39])`
+  - `FootballApi::leagues(39, 2020)->fixtures(['team' => 33])`
   - `FootballApi::leagues(39, 2020)->fixtures(['live' => 'all'])`
 
 
 - **`injuries`** returns the list of players not participating in the fixtures for a season. Examples: 
   - `FootballApi::leagues(39, 2020)->injuries()`
-  - `FootballApi::leagues(39, 2020)->injuries(['team' => 39])`
+  - `FootballApi::leagues(39, 2020)->injuries(['team' => 33])`
   - `FootballApi::leagues(39, 2020)->injuries(['player' => 642])`
 
 
-- **`players`** returns the players for a season (uses pagination, and receives the page number as first argument). Examples: 
+- **`players`** returns the players for a season (uses pagination, the first argument is the page number). Examples: 
   - `FootballApi::leagues(39, 2020)->players()`
-  - `FootballApi::leagues(39, 2020)->players(20)`
-  - `FootballApi::leagues(39, 2020)->players(1, ['team' => 39])`
+  - `FootballApi::leagues(39, 2020)->players(10)`
+  - `FootballApi::leagues(39, 2020)->players(2, ['team' => 39])`
 
 
 - **`rounds`** returns the rounds for a season. Examples: 
@@ -242,7 +243,7 @@ You can call to `FootballApi::class()->method()`. The available classes and meth
 - **`topYellowCards`** returns the players with the most yellow cards for a season. Examples: 
   - `FootballApi::leagues(39, 2020)->topYellowCards()`
 
-### Players
+#### Players
 
 - **`get`** returns the player's statistics. Examples: 
   - `FootballApi::players()->get($query)`.
@@ -274,7 +275,7 @@ You can call to `FootballApi::class()->method()`. The available classes and meth
 - **`trophies`** returns all available trophies for a player. Examples: 
   - `FootballApi::players(29)->trophies()`
 
-### Teams
+#### Teams
 
 - **`get`** returns the list of available teams. Examples: 
   - `FootballApi::teams()->get(['league' => 39, 'season' => 2020])` 
@@ -283,7 +284,6 @@ You can call to `FootballApi::class()->method()`. The available classes and meth
 
 - **`find`** returns the team information. Examples: 
   - `FootballApi::teams()->find(33)`
-  - `FootballApi::teams()->find(530)`
 
 
 - **`countries`** returns the list of countries available for the "teams" endpoint. Examples: 
@@ -319,13 +319,13 @@ You can call to `FootballApi::class()->method()`. The available classes and meth
   - `FootballApi::teams(33)->transfers(['player' => 5982])`
 
 
-### Timezones
+#### Timezones
 
 - **`get`** returns the list of available timezone to be used in the "fixtures" endpoint. Examples: 
   - `FootballApi::timezones()->get()`.
 
 
-### Venues
+#### Venues
 
 - **`get`** returns the list of available venues. Examples: 
   - `FootballApi::venues()->get(['city' => 'london'])`
@@ -335,6 +335,8 @@ You can call to `FootballApi::class()->method()`. The available classes and meth
 - **`find`** returns the venue information. Examples: 
   - `FootballApi::venues()->find(489)`
 
+
+### Combination
 
 In this way, you can instantiate an item and combine different calls. For example:
 
