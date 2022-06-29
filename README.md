@@ -51,7 +51,7 @@ ApiSports\FootballApi\FootballApiServiceProvider::class,
 
 **3.** Publish the config file
 ```bash
-$ php artisan vendor:publish --provider="ApiSports\FootballApi\FootballApiServiceProvider"
+php artisan vendor:publish --provider="ApiSports\FootballApi\FootballApiServiceProvider"
 ```
 
 ### Using Lumen
