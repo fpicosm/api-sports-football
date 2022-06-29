@@ -246,8 +246,8 @@ The available classes and methods are:
 #### Players
 
 - **`get`** returns the player's statistics. Examples: 
-  - `FootballApi::players()->get($query)`.
-
+  - `FootballApi::players()->get(['search' => 'oblak', 'team' => 530])`.
+  - `FootballApi::players()->get(['league' => 2, 'season' => 2021])`.
 
 - **`seasons`** returns all available seasons for a given player. Examples: 
   - `FootballApi::players(29)->seasons()`
@@ -262,7 +262,7 @@ The available classes and methods are:
   - `FootballApi::players(29)->squads(['team' => 530])`
 
 
-- **`statistics`** returns the player statistics for a given season. Examples:
+- **`statistics`** returns the player statistics for a given year. Examples:
   - `FootballApi::players(29)->statistics(2021)`
   - `FootballApi::players(29)->statistics(2021, ['league' => 2])`
 

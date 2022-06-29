@@ -12,10 +12,8 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     {
         parent::setup();
 
-        Config::set('football-api.api_origin', 'rapid-api');
-
-        // A random account's token, replace it with a real token for testing
-        Config::set('football-api.api_key', '125f716d21msh8f615bfea139f7bp156978jsn004a2596ebdf');
+        Config::set('football-api.api_origin', 'YOUR_ORIGIN');
+        Config::set('football-api.api_key', 'YOUR_API_KEY');
 
         $this->leagueId = 140;
         $this->season = 2021;
