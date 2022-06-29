@@ -31,7 +31,7 @@ First, you need to update your `.env` file adding three variables:
 
 - **FOOTBALL_API_ORIGIN**: Set the origin where you obtained your api key. Values accepted: `rapidapi` or `api-sports`. See the [documentation](https://api-sports.io/documentation/football/v3#section/Authentication) for more details. 
 - **FOOTBALL_API_KEY**: Set your api key obtained in the previous step.
-- **FOOTBALL_API_TIMEZONE**: Set the timezone (optional). If you leave empty, the api will get the value from `env('APP_TIMEZONE')`. If you set a value, it needs to exist in the [Timezone endpoint](https://api-sports.io/documentation/football/v3#tag/Timezone/operation/get-timezone)
+- **FOOTBALL_API_TIMEZONE**: Set the timezone (optional, if you leave empty, the api will get the value from `env('APP_TIMEZONE')`). The value needs to exist in the [Timezone endpoint](https://api-sports.io/documentation/football/v3#tag/Timezone/operation/get-timezone)
 
 Then, you need to add the providers and facades:
 
