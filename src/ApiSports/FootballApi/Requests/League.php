@@ -81,7 +81,7 @@ class League extends FootballApiClient
             'league' => $this->id,
             'season' => $this->season,
             ...$query,
-        ]);
+        ], true);
     }
 
     /**
