@@ -147,7 +147,7 @@ class Team extends FootballApiClient
     {
         if (empty($this->id)) throw new InvalidArgumentException('No team ID set');
 
-        return $this->call('teams/statistics', [
+        return $this->callItem('teams/statistics', [
             'team' => $this->id,
             'league' => $leagueId,
             'season' => $season,
